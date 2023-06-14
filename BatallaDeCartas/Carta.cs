@@ -8,7 +8,6 @@ namespace BatallaDeCartas
         public string Valor { get; set; }
         public Figura Palo { get; set; }
         public int Rango { get; set; }
-
         public int Jugador { get; set; }
 
         public Carta(string valor, Figura figuras, int rango, int jugador)
@@ -44,18 +43,31 @@ namespace BatallaDeCartas
                     sFiguraSimbolo = "♣";
                     break;
             }
-            //return String.Format($"{Valor} {Palo} {sFiguraSimbolo}");
             return String.Format($"{Valor} {sFiguraSimbolo}");
         }
 
-        public static bool operator <(Carta a, Carta b)
+        public static string NumerosPoker(int nRango)
         {
-            return a.Rango < b.Rango;
-        }
-
-        public static bool operator >(Carta a, Carta b)
-        {
-            return a.Rango > b.Rango;
-        }
+            string sValor = null;
+            switch (nRango)
+            {
+                case 0:
+                    sValor = "AS";
+                    break;
+                case 10:
+                    sValor = "J";
+                    break;
+                case 11:
+                    sValor = "Q";
+                    break;
+                case 12:
+                    sValor = "K";
+                    break;
+                default:
+                    sValor = (nRango + 1).ToString();
+                    break;
+            }
+            return sValor;
+        }        
     }
 }
