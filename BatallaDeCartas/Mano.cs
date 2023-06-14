@@ -60,6 +60,8 @@ namespace BatallaDeCartas
             if (VariablesGlobales.NumeroJugadores - nJugadoresSinCarta == 1)
             {
                 Console.WriteLine("No quedan participantes, se acabó el juego.");
+                Console.WriteLine("Pulsa cualquier tecla para jugar de nuevo. . .");
+                Console.WriteLine("Pulsa ESC para salir. . .");
                 bJugando = false;
             }
             else
